@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>ssh-key git多账户配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="场景：在使用git的时候，一般我们使用的远程Git服务器是github，这时只需简单的生成ssh-key密钥对并将公钥添加到github中就可以使用ssh了。 但在公司开发使用内部的git时，一般在gitlab,使用的邮箱一般是公司的邮箱，那么就需要配置多个ssh-key账户了。假设user使用github的邮箱为user1@163.com;user2使用gitlab的邮箱为user2@163.c">
+<meta name="keywords" content="git,工作流">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ssh-key git多账户配置">
+<meta property="og:url" content="http://yoursite.com/2017/04/18/ssh key-gen/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="场景：在使用git的时候，一般我们使用的远程Git服务器是github，这时只需简单的生成ssh-key密钥对并将公钥添加到github中就可以使用ssh了。 但在公司开发使用内部的git时，一般在gitlab,使用的邮箱一般是公司的邮箱，那么就需要配置多个ssh-key账户了。假设user使用github的邮箱为user1@163.com;user2使用gitlab的邮箱为user2@163.c">
+<meta property="og:updated_time" content="2017-04-18T14:01:58.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="ssh-key git多账户配置">
+<meta name="twitter:description" content="场景：在使用git的时候，一般我们使用的远程Git服务器是github，这时只需简单的生成ssh-key密钥对并将公钥添加到github中就可以使用ssh了。 但在公司开发使用内部的git时，一般在gitlab,使用的邮箱一般是公司的邮箱，那么就需要配置多个ssh-key账户了。假设user使用github的邮箱为user1@163.com;user2使用gitlab的邮箱为user2@163.c">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -143,78 +148,89 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ssh key-gen" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/18/center/" class="archive-article-date">
-  	<time datetime="2017-04-18T14:02:34.862Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/18/center/">水平居中和垂直居中</a>
+    <h1 class="article-title" itemprop="name">
+      ssh-key git多账户配置
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/18/ssh key-gen/" class="archive-article-date">
+        
+        <a href="/2017/04/18/ssh key-gen/" class="archive-article-date">
   	<time datetime="2017-04-18T13:40:06.722Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/18/ssh key-gen/">ssh-key git多账户配置</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>场景：在使用git的时候，一般我们使用的远程Git服务器是github，这时只需简单的生成ssh-key密钥对并将公钥添加到github中就可以使用ssh了。 但在公司开发使用内部的git时，一般在gitlab,使用的邮箱一般是公司的邮箱，那么就需要配置多个ssh-key账户了。假设user使用github的邮箱为user1@163.com;user2使用gitlab的邮箱为user2@163.com,下面是配置过程：</p>
+<ol>
+<li>首先进入用户主目录下的.ssh文件夹，我们生成的密钥对放在这儿<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cd ~/.ssh</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li>分别为user1和user2生成密钥对：<br>默认三次回车生成key的名字为id_rsa，注意在生成第二个的时候不要使用默认名，否则会覆盖第一个，在以下位置为第二个输入名字<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#新建SSH key</div><div class="line">$ ssh-keygen -t rsa -C &quot;user1@163.com&quot;</div><div class="line">$ ssh-keygen -t rsa -C &quot;user2@163.com&quot;</div><div class="line">#设置user2的命名为id_rsa_work </div><div class="line">Enter file in which to save the key (/c/Users/Administrator/.ssh/id_rsa): id_rsa_work</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>此时在.ssh目录下就有两个密钥对文件id_rsa和id_rsa_work,我们将公钥分别拷至对应的Git服务器</p>
+<ol>
+<li>添加key到SSH agent中:<br>此时还无法使用第二个服务器，因为Git会默认只读取到id_rsa,为了让SSH识别新的私钥，需将其添加到SSH agent中：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh-add ~/.ssh/id_rsa</div><div class="line">$ ssh-add ~/.ssh/id_rsa_work</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果出现Could not open a connection to your authentication agent的错误，就试着用以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-agent bash</div><div class="line">$ ssh-add ~/.ssh/id_rsa</div><div class="line">$ ssh-add ~/.ssh/id_rsa_work</div></pre></td></tr></table></figure></p>
+<p>成功会显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Identity added: /c/Users/Windows用户名/.ssh/key名 (/c/Users/Windows用户名/.ssh/key名)</div></pre></td></tr></table></figure></p>
+<p>注意：ssh-add 这个命令不是用来永久性的记住你所使用的私钥的。实际上，它的作用只是把你指定的私钥添加到 ssh-agent 所管理的一个 session 当中。而 ssh-agent 是一个用于存储私钥的临时性的 session 服务，也就是说当你重启之后，ssh-agent 服务也就重置了。</p>
+<ol>
+<li>创建并配置config文件使配置永久生效：<br>在.ssh目录下新建一个文本文件，命令为config，不需要后缀，bash下可直接使用touch config,编辑以下内容：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># gitlab</div><div class="line">    Host gitlab的IP</div><div class="line">        HostName gitlab的Host     //这里填你们公司的git网址即可</div><div class="line">        PreferredAuthentications publickey</div><div class="line">        IdentityFile ~/.ssh/id_rsa_work</div><div class="line">        User user2</div><div class="line"></div><div class="line"># github</div><div class="line">    Host github.com</div><div class="line">        HostName github.com</div><div class="line">        PreferredAuthentications publickey</div><div class="line">        IdentityFile ~/.ssh/id_rsa</div><div class="line">        User user1</div></pre></td></tr></table></figure>
+<p>其规则就是：从上至下读取config的内容，在每个Host下寻找对应的私钥。按照你的情况修改就可以。</p>
+<ol>
+<li>使用：如果之前有设置全局用户名和邮箱的话，需要unset一下，可通过 <code>$ git config --list</code>来查看全局配置  </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global --unset user.name</div><div class="line">$ git config --global --unset user.email</div></pre></td></tr></table></figure>
+<p>可以在不同的仓库下设置局部的用户名和邮箱用不同的账号登录，比如在公司的repository下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config user.name &quot;user2&quot;  </div><div class="line">$ git config user.email &quot;user2@163.com&quot;</div></pre></td></tr></table></figure>
+<ol>
+<li>测试：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line">#输出：Hi user1! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div><div class="line">$ ssh -T git@gitlab的IP</div><div class="line">#输出：Hi user2@163.com**, this is git@.....</div></pre></td></tr></table></figure>
+<p>测试成功。<br>如果出什么问题，可以通过<code>ssh -vT git@github.com</code>来输出编译信息，然后根据编译信息去解决问题</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -230,46 +246,97 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/18/ssh key-gen/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/13/hello-world/" class="archive-article-date">
-  	<time datetime="2017-04-13T13:26:34.908Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-13</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/13/hello-world/">Hello World</a>
-    </h1>
+    <a href="/2017/04/13/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/18/center/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">水平居中和垂直居中</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -292,8 +359,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,14 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>水平居中和垂直居中 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="html页面结构如下，仅讨论块状元素的居中问题，div的父元素为body，改成其他元素同理12345678910&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;	&amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;&amp;lt;">
+<meta name="keywords" content="css,布局">
+<meta property="og:type" content="article">
+<meta property="og:title" content="水平居中和垂直居中">
+<meta property="og:url" content="http://yoursite.com/2017/04/18/center/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="html页面结构如下，仅讨论块状元素的居中问题，div的父元素为body，改成其他元素同理12345678910&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;	&amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;&amp;lt;">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5463632-2e4700ecd14dc930.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5463632-1c85e78dc8b4793c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500">
+<meta property="og:updated_time" content="2017-04-18T14:06:27.599Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="水平居中和垂直居中">
+<meta name="twitter:description" content="html页面结构如下，仅讨论块状元素的居中问题，div的父元素为body，改成其他元素同理12345678910&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;	&amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;&amp;lt;">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/5463632-2e4700ecd14dc930.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -143,36 +151,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-center" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/18/center/" class="archive-article-date">
-  	<time datetime="2017-04-18T14:02:34.862Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/18/center/">水平居中和垂直居中</a>
+    <h1 class="article-title" itemprop="name">
+      水平居中和垂直居中
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/18/center/" class="archive-article-date">
+  	<time datetime="2017-04-18T14:02:34.862Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>html页面结构如下，仅讨论块状元素的居中问题，div的父元素为body，改成其他元素同理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div id=&quot;mydiv&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>DIV仅水平居中</strong><br><a id="more"></a><br>让一个DIV水平居中，直接用CSS就可以做到。<em> 为了让div能够看到，我们需要为其设置颜色和高度才能在页面可见，宽度如果不设置默认是继承父元素的宽度 </em>   只要设置了DIV的宽度，然后使用margin设置边距0 auto或者auto，CSS自动算出左右边距，使得DIV居中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#mydiv&#123;</div><div class="line">    margin:0 auto;</div><div class="line">    width:400px;</div><div class="line">    height:200px;</div><div class="line">    background:#ccc;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>水平居中效果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/5463632-2e4700ecd14dc930.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="Paste_Image.png"><br><strong>DIV水平和垂直都居中</strong></p>
+<ol>
+<li><p>绝对定位法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#mydiv&#123;</div><div class="line">    width:400px;</div><div class="line">    height:200px;</div><div class="line">    background:#ccc;</div><div class="line">    position:absolute;</div><div class="line">    margin:auto;</div><div class="line">    left:0;</div><div class="line">    right:0;</div><div class="line">    top:0;</div><div class="line">    bottom:0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>负边距补全法<br>此法要让DIV水平和垂直居中，<strong>必需知道该DIV的宽度和高度</strong>，然后设置定位为<strong>绝对定位</strong>，距离页面窗口左边框和上边框的距离设置为50%，这个50%就是指页面窗口的宽度和高度的50%，最后将该DIV分别左移和上移，左移和上移的大小就是该DIV宽度和高度的一半。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#mydiv&#123;</div><div class="line">    position:absolute;</div><div class="line">    width:400px;</div><div class="line">    height:200px;</div><div class="line">    background:#ccc;</div><div class="line">    left:50%;</div><div class="line">    top:50%;</div><div class="line">    margin:-100px 0 0 -200px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h6 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h6><p>这儿的负边距补充也可以使用css3的transform属性实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#mydiv&#123;</div><div class="line">    position:absolute;</div><div class="line">    width:400px;</div><div class="line">    height:200px;</div><div class="line">    background:#ccc;</div><div class="line">    left:50%;</div><div class="line">    top:50%;</div><div class="line">    transform:translate(-50%,-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>1,2的效果如下：<br><img src="http://upload-images.jianshu.io/upload_images/5463632-1c85e78dc8b4793c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="Paste_Image.png"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -188,88 +229,92 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/18/center/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/18/ssh key-gen/" class="archive-article-date">
-  	<time datetime="2017-04-18T13:40:06.722Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/18/ssh key-gen/">ssh-key git多账户配置</a>
-    </h1>
+    <a href="/2017/04/18/ssh key-gen/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ssh-key git多账户配置
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工作流</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/13/hello-world/" class="archive-article-date">
-  	<time datetime="2017-04-13T13:26:34.908Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -292,8 +337,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
