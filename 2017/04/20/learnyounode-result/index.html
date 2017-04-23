@@ -8,14 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>NodeSchool learnyounode答案(转载) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="nodejs">
+  <meta name="description" content="hello_world（你好，世界） 1console.log(&amp;quot;HELLO WORLD&amp;quot;)  baby_steps（婴儿学步） 123456//此例子演示从命令行接受参数的方法var result = 0//process.argv[0]是node，process.argv[1]是脚本文件名，所以从2开始才是输入参数for (var i = 2; i &amp;lt; proces">
+<meta name="keywords" content="nodejs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NodeSchool learnyounode答案(转载)">
 <meta property="og:url" content="http://yoursite.com/2017/04/20/learnyounode-result/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2017-04-20T09:43:10.468Z">
+<meta property="og:description" content="hello_world（你好，世界） 1console.log(&amp;quot;HELLO WORLD&amp;quot;)  baby_steps（婴儿学步） 123456//此例子演示从命令行接受参数的方法var result = 0//process.argv[0]是node，process.argv[1]是脚本文件名，所以从2开始才是输入参数for (var i = 2; i &amp;lt; proces">
+<meta property="og:updated_time" content="2017-04-23T08:31:18.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NodeSchool learnyounode答案(转载)">
+<meta name="twitter:description" content="hello_world（你好，世界） 1console.log(&amp;quot;HELLO WORLD&amp;quot;)  baby_steps（婴儿学步） 123456//此例子演示从命令行接受参数的方法var result = 0//process.argv[0]是node，process.argv[1]是脚本文件名，所以从2开始才是输入参数for (var i = 2; i &amp;lt; proces">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -165,7 +168,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ol>
+<li><p>hello_world（你好，世界）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(&quot;HELLO WORLD&quot;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>baby_steps（婴儿学步）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//此例子演示从命令行接受参数的方法var result = 0</div><div class="line">//process.argv[0]是node，process.argv[1]是脚本文件名，所以从2开始才是输入参数</div><div class="line">for (var i = 2; i &lt; process.argv.length; i++)</div><div class="line">  result += Number(process.argv[i])</div><div class="line"></div><div class="line">console.log(result)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li><p>my_first_io（第一个 I/O）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var fs = require(&apos;fs&apos;)</div><div class="line"></div><div class="line">//使用同步的方式读取文件，返回值是一个Buffer对象</div><div class="line">var contents = fs.readFileSync(process.argv[2])</div><div class="line">var lines = contents.toString().split(&apos;\n&apos;).length - 1</div><div class="line">console.log(lines)</div></pre></td></tr></table></figure>
+</li>
+<li><p>my_first_async_io（第一个异步 I/O）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var fs = require(&apos;fs&apos;)</div><div class="line">var file = process.argv[2]</div><div class="line"></div><div class="line">fs.readFile(file, function (err, contents) &#123;</div><div class="line">  // fs.readFile(file, &apos;utf8&apos;, callback) can also be used</div><div class="line">  var lines = contents.toString().split(&apos;\n&apos;).length - 1</div><div class="line">  console.log(lines)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>filtered_ls（LS 过滤器）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var fs = require(&apos;fs&apos;)</div><div class="line">var path = require(&apos;path&apos;)</div><div class="line"></div><div class="line">//异步的方式读取目录文件，详情http://nodejs.org/api/fs.html#fs_fs_readdir_path_callback</div><div class="line">fs.readdir(process.argv[2], function (err, list) &#123;</div><div class="line">  list.forEach(function (file) &#123;</div><div class="line">    if (path.extname(file) === &apos;.&apos; + process.argv[3])</div><div class="line">      console.log(file)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>make_it_modular（使其模块化）<br>sulution.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var filterFn = require(&apos;./solution_filter.js&apos;)</div><div class="line">var dir = process.argv[2]</div><div class="line">var filterStr = process.argv[3]</div><div class="line"></div><div class="line">filterFn(dir, filterStr, function (err, list) &#123;</div><div class="line">  if (err)</div><div class="line">    return console.error(&apos;There was an error:&apos;, err)</div><div class="line"></div><div class="line">  list.forEach(function (file) &#123;</div><div class="line">    console.log(file)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>solution_filter.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var fs = require(&apos;fs&apos;)</div><div class="line">var path = require(&apos;path&apos;)</div><div class="line"></div><div class="line">module.exports = function (dir, filterStr, callback) &#123;</div><div class="line"></div><div class="line">  fs.readdir(dir, function (err, list) &#123;</div><div class="line">    if (err)</div><div class="line">      return callback(err)</div><div class="line"></div><div class="line">    list = list.filter(function (file) &#123;</div><div class="line">      return path.extname(file) === &apos;.&apos; + filterStr</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    callback(null, list)</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>http_client（HTTP 客户端）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var http = require(&apos;http&apos;)</div><div class="line">//http://nodejs.org/api/http.html#http_http_get_options_callback</div><div class="line">http.get(process.argv[2], function (response) &#123;</div><div class="line">  response.setEncoding(&apos;utf8&apos;)</div><div class="line">  response.on(&apos;data&apos;, console.log)</div><div class="line">  response.on(&apos;error&apos;, console.error)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>http_collect（HTTP 收集器）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//运行此例子需要安装bl</div><div class="line">// npm install bl</div><div class="line">var http = require(&apos;http&apos;)</div><div class="line">var bl = require(&apos;bl&apos;)</div><div class="line"></div><div class="line">http.get(process.argv[2], function (response) &#123;</div><div class="line">  response.pipe(bl(function (err, data) &#123;</div><div class="line">    if (err)</div><div class="line">      return console.error(err)</div><div class="line">    data = data.toString()</div><div class="line">    console.log(data.length)</div><div class="line">    console.log(data)</div><div class="line">  &#125;))  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>juggling_async（玩转异步）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">var http = require(&apos;http&apos;)</div><div class="line">var bl = require(&apos;bl&apos;)</div><div class="line">var results = []</div><div class="line">var count = 0</div><div class="line"></div><div class="line">function printResults () &#123;</div><div class="line">  for (var i = 0; i &lt; 3; i++)</div><div class="line">    console.log(results[i])</div><div class="line">&#125;</div><div class="line"></div><div class="line">function httpGet (index) &#123;</div><div class="line">  http.get(process.argv[2 + index], function (response) &#123;</div><div class="line">    response.pipe(bl(function (err, data) &#123;</div><div class="line">      if (err)</div><div class="line">        return console.error(err)</div><div class="line"></div><div class="line">      results[index] = data.toString()</div><div class="line">      count++</div><div class="line"></div><div class="line">      if (count == 3)</div><div class="line">        printResults()</div><div class="line">    &#125;))</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">for (var i = 0; i &lt; 3; i++)</div><div class="line">  httpGet(i)</div></pre></td></tr></table></figure>
+</li>
+<li><p>time_server（授时服务器）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">var net = require(&apos;net&apos;)</div><div class="line"></div><div class="line">function zeroFill(i) &#123;</div><div class="line">  return (i &lt; 10 ? &apos;0&apos; : &apos;&apos;) + i</div><div class="line">&#125;</div><div class="line"></div><div class="line">function now () &#123;</div><div class="line">  var d = new Date()</div><div class="line">  return d.getFullYear() + &apos;-&apos;</div><div class="line">    + zeroFill(d.getMonth() + 1) + &apos;-&apos;</div><div class="line">    + zeroFill(d.getDate()) + &apos; &apos;</div><div class="line">    + zeroFill(d.getHours()) + &apos;:&apos;</div><div class="line">    + zeroFill(d.getMinutes())</div><div class="line">&#125;</div><div class="line"></div><div class="line">var server = net.createServer(function (socket) &#123;</div><div class="line">  socket.end(now() + &apos;\n&apos;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">server.listen(Number(process.argv[2]))</div></pre></td></tr></table></figure>
+</li>
+<li><p>http_file_server（HTTP 文件服务器）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var http = require(&apos;http&apos;)</div><div class="line">var fs = require(&apos;fs&apos;)</div><div class="line"></div><div class="line">var server = http.createServer(function (req, res) &#123;</div><div class="line">  res.writeHead(200, &#123; &apos;content-type&apos;: &apos;text/plain&apos; &#125;)</div><div class="line"></div><div class="line">  fs.createReadStream(process.argv[3]).pipe(res)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">server.listen(Number(process.argv[2]))</div></pre></td></tr></table></figure>
+</li>
+<li><p>HTTP 大写转换器（HTTP 大写转换器）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var http = require(&apos;http&apos;)</div><div class="line">var map = require(&apos;through2-map&apos;)</div><div class="line"></div><div class="line">var server = http.createServer(function (req, res) &#123;</div><div class="line">  if (req.method != &apos;POST&apos;)</div><div class="line">    return res.end(&apos;send me a POST\n&apos;)</div><div class="line"></div><div class="line">  req.pipe(map(function (chunk) &#123;</div><div class="line">    return chunk.toString().toUpperCase()</div><div class="line">  &#125;)).pipe(res)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">server.listen(Number(process.argv[2]))</div></pre></td></tr></table></figure>
+</li>
+<li><p>http_json_api_server（HTTP JSON API 服务器）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">var http = require(&apos;http&apos;)</div><div class="line">var url = require(&apos;url&apos;)</div><div class="line"></div><div class="line">function parsetime (time) &#123;</div><div class="line">  return &#123;</div><div class="line">    hour: time.getHours(),</div><div class="line">    minute: time.getMinutes(),</div><div class="line">    second: time.getSeconds()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function unixtime (time) &#123;</div><div class="line">  return &#123; unixtime : time.getTime() &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var server = http.createServer(function (req, res) &#123;</div><div class="line">  var parsedUrl = url.parse(req.url, true)</div><div class="line">  var time = new Date(parsedUrl.query.iso)</div><div class="line">  var result</div><div class="line"></div><div class="line">  if (/^\/api\/parsetime/.test(req.url))</div><div class="line">    result = parsetime(time)</div><div class="line">  else if (/^\/api\/unixtime/.test(req.url))</div><div class="line">    result = unixtime(time)</div><div class="line"></div><div class="line">  if (result) &#123;</div><div class="line">    res.writeHead(200, &#123; &apos;Content-Type&apos;: &apos;application/json&apos; &#125;)</div><div class="line">    res.end(JSON.stringify(result))</div><div class="line">  &#125; else &#123;</div><div class="line">    res.writeHead(404)</div><div class="line">    res.end()</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">server.listen(Number(process.argv[2]))</div></pre></td></tr></table></figure></li>
+</ol>
+
       
 
       
@@ -371,18 +420,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">源码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -392,6 +429,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">源码</a>
               </li>
              
               <li class="article-tag-list-item">
