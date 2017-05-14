@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>add | Hexo</title>
+  <title>add(1)(2)(3)函数的扩展 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="step 1：编写add函数，实现add(1)(2)(3)输出6  遇到这个题，我们的第一反应是利用闭包每次返回一个函数，在其中做加法运算12345678var add=function(x)&amp;#123;    return function(y)&amp;#123;        return function(z)&amp;#123;            return x+y+z        &amp;#125">
-<meta name="keywords">
+<meta name="keywords" content="js,闭包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="add">
+<meta property="og:title" content="add(1)(2)(3)函数的扩展">
 <meta property="og:url" content="http://yoursite.com/2017/05/13/add/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="step 1：编写add函数，实现add(1)(2)(3)输出6  遇到这个题，我们的第一反应是利用闭包每次返回一个函数，在其中做加法运算12345678var add=function(x)&amp;#123;    return function(y)&amp;#123;        return function(z)&amp;#123;            return x+y+z        &amp;#125">
-<meta property="og:updated_time" content="2017-05-13T16:00:40.371Z">
+<meta property="og:updated_time" content="2017-05-14T09:03:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="add">
+<meta name="twitter:title" content="add(1)(2)(3)函数的扩展">
 <meta name="twitter:description" content="step 1：编写add函数，实现add(1)(2)(3)输出6  遇到这个题，我们的第一反应是利用闭包每次返回一个函数，在其中做加法运算12345678var add=function(x)&amp;#123;    return function(y)&amp;#123;        return function(z)&amp;#123;            return x+y+z        &amp;#125">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -155,7 +155,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      add
+      add(1)(2)(3)函数的扩展
     </h1>
   
 
@@ -174,14 +174,15 @@
 <p>遇到这个题，我们的第一反应是利用闭包每次返回一个函数，在其中做加法运算<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var add=function(x)&#123;</div><div class="line">    return function(y)&#123;</div><div class="line">        return function(z)&#123;</div><div class="line">            return x+y+z</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">add(1)(2)(3)  //输出6</div></pre></td></tr></table></figure></p>
 <p>但是这样的函数必须按照特定的方式调用，如果使用add(1)(2)(3)(4)就不适用了<br><a id="more"></a></p>
 <ul>
-<li>step 2：可以不限调用的次数<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var add=function(x)&#123;</div><div class="line">    var sum=x;</div><div class="line">    var tmp = function(y)&#123;</div><div class="line">        sum+=y;</div><div class="line">        return tmp;</div><div class="line">    &#125;</div><div class="line">    tmp.valueOf = tmp.toString = function()&#123;</div><div class="line">        return sum;</div><div class="line">    &#125;</div><div class="line">    return tmp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>step 2：可以不限调用的次数<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var add=function(x)&#123;</div><div class="line">    var sum=x;</div><div class="line">    var tmp = function(y)&#123;</div><div class="line">        sum+=y;</div><div class="line">        return tmp;</div><div class="line">    &#125;</div><div class="line">    tmp.valueOf = tmp.toString = function()&#123;</div><div class="line">        return sum;</div><div class="line">    &#125;</div><div class="line">    return tmp;</div><div class="line">&#125;</div><div class="line">add(1)(2)(3)(4)(5)  //输出15</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>分析以上函数，在add当中返回了一个临时创建的函数tmp，在tmp中保存前一次add中传入的参数，并与当前tmp的参数进行相加，实现加法，但是这样每次调用其实返回的都是一个函数，并不能输出我们的结果。JavaScript中，打印和相加计算，会分别调用toString或valueOf函数，所以我们重写tmp的toString和valueOf方法，返回sum的值。对于加法运算，valueOf比toString优先级更高。</p>
+<p>分析以上函数，第一次调用add返回了一个临时创建的函数tmp并将第一个参数值存储在变量sum中，因为闭包tmp可以访问到sum，并在tmp中将sum与当前tmp的参数进行相加更新sum变量，实现加法。但是这样计算完成后返回的还是一个函数，最终并不能输出我们的结果。<strong>JavaScript中，打印和相加计算，会分别调用toString或valueOf函数，对于加法运算，valueOf比toString优先级更高。</strong> 所以我们重写tmp的toString和valueOf方法，返回sum的值。</p>
 <ul>
-<li>step 3：不限制形参的个数，例如add(1,2,3)(4)能输出10<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function add() &#123;</div><div class="line">    // 第一次执行时，定义一个数组专门用来存储所有的参数</div><div class="line">    var _args = [].slice.call(arguments);</div><div class="line"></div><div class="line">    // 在内部声明一个函数，利用闭包的特性保存_args并收集所有的参数值</div><div class="line">    var adder = function () &#123;</div><div class="line">        var _adder = function() &#123;</div><div class="line">            [].push.apply(_args, [].slice.call(arguments));</div><div class="line">            return _adder;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        // 利用隐式转换的特性，当最后执行时隐式转换，并计算最终的值返回</div><div class="line">        _adder.toString = function () &#123;</div><div class="line">            return _args.reduce(function (a, b) &#123;</div><div class="line">                return a + b;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        return _adder;</div><div class="line">    &#125;</div><div class="line">    return adder.apply(null, [].slice.call(arguments));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>step 3：不限制形参的个数，例如add(1,2,3)(4)能输出10<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var add=function()&#123;</div><div class="line">    var args=[].slice.call(arguments);</div><div class="line">    var tmp = function()&#123;</div><div class="line">        //收集参数到args数组</div><div class="line">        args = args.concat([].slice.call(arguments));  </div><div class="line">        return tmp;</div><div class="line">    &#125;</div><div class="line">    tmp.valueOf = tmp.toString = function()&#123;</div><div class="line">         return args.reduce(function(first,second)&#123;</div><div class="line">                return first+second;</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">    return tmp;</div><div class="line">&#125;</div><div class="line">add(1,2,3)(4,5)(6)  //输出21</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<p>由于每次调用时参数的个数不确定，所以相比step2我们需要将求和的操作替换成参数收集的操作，通过链式调用将所有的参数收集到args数组中，对这个数组求和，返回最终的结果。</p>
 
       
 
@@ -211,6 +212,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闭包</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -377,14 +393,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Date</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -393,11 +401,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">源码</a>
+                <a href="javascript:void(0)" class="js-tag color5">Date</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -409,11 +421,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">源码</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
             
             <div class="clearfix"></div>
