@@ -15,10 +15,13 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/27/calender/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="百度笔试题：给定下面的html结构，实现一个calender函数，在页面输出日历，并标出今天">
-<meta property="og:updated_time" content="2017-05-14T10:41:40.226Z">
+<meta property="og:image" content="http://yoursite.com/img/calendar1.jpg">
+<meta property="og:image" content="http://yoursite.com/img/calendar2.jpg">
+<meta property="og:updated_time" content="2017-05-14T11:30:12.706Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="百度笔试题之输出一个月日历calender的总结">
 <meta name="twitter:description" content="百度笔试题：给定下面的html结构，实现一个calender函数，在页面输出日历，并标出今天">
+<meta name="twitter:image" content="http://yoursite.com/img/calendar1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -170,10 +173,10 @@
       
         <p>百度笔试题：<br>给定下面的html结构，实现一个calender函数，在页面输出日历，并标出今天<br><a id="more"></a><br>html页面和相关css如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">		body,html&#123;padding: 0;margin: 0;font-size: 14px;color:#000;&#125;</div><div class="line">		table &#123;border-collapse: collapse;width: 100%;table-layout: fixed;&#125;</div><div class="line">		td,th &#123;border: 1px solid #e1e1e1;padding: 0;height: 20px;line-height: 20px;text-align: center;&#125;</div><div class="line">		.current&#123;color:red;&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;table&gt;</div><div class="line">    &lt;thead&gt;</div><div class="line">        &lt;tr&gt;&lt;th&gt;一&lt;/th&gt;&lt;th&gt;二&lt;/th&gt;&lt;th&gt;三&lt;/th&gt;&lt;th&gt;四&lt;/th&gt;&lt;th&gt;五&lt;/th&gt;&lt;th&gt;六&lt;/th&gt;&lt;th&gt;日&lt;/th&gt;&lt;/tr&gt;</div><div class="line">    &lt;/thead&gt;</div><div class="line">    &lt;tbody&gt;</div><div class="line">        &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;</div><div class="line">        &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;</div><div class="line">        &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;</div><div class="line">        &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;</div><div class="line">        &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;</div><div class="line">        &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;</div><div class="line">    &lt;/tbody&gt;</div><div class="line">&lt;/table&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
 <p>js实现函数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">//给定年份和月份</div><div class="line">function calender(year,month)&#123;</div><div class="line">	var date=new Date(year,month-1,1);</div><div class="line">	var date2 = new Date(year,month,1);</div><div class="line">	var first = date.getDay();  //该月第一天是星期几</div><div class="line">	var days = (date2-date)/(1000*60*60*24);  //该月一共有多少天</div><div class="line">	var today = new Date();</div><div class="line">	var todayInMonth = today.getFullYear()===year&amp;&amp;today.getMonth()+1 === month;</div><div class="line">	var theDay=today.getDate(); </div><div class="line">	var n=1;</div><div class="line">	var flag=false;  //当前td是否需要输出日期</div><div class="line">	for(var i=1;i&lt;7;i++)&#123;</div><div class="line">		var tr=document.getElementsByTagName(&quot;tr&quot;)[i];</div><div class="line">		for(var j=0;j&lt;7;j++)&#123;</div><div class="line">			var td=tr.getElementsByTagName(&quot;td&quot;)[j];</div><div class="line">			if(i==1&amp;&amp;(j==first-1))&#123;</div><div class="line">				flag=true;</div><div class="line">			&#125;</div><div class="line">			if(flag)&#123;</div><div class="line">				if(todayInMonth&amp;&amp;theDay===n)&#123;</div><div class="line">					td.className=&quot;current&quot;; //今日添加current样式</div><div class="line">				&#125;</div><div class="line">				td.innerHTML=n;</div><div class="line">				n++;</div><div class="line">			&#125;</div><div class="line">			if(n&gt;days)&#123;</div><div class="line">				flag=false;</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>由于题目给定的table的body部分结构是固定的，因此我们只需要往二维表格里填入数据即可，设置一个flag变量，判断开始填入的格子，将其置为true,当n&gt;days后flag置为false,表明当月输入完毕。</p>
+<p>由于题目给定的table的body部分结构是固定的，因此我们只需要往二维表格里填入数据即可，设置一个flag变量，判断开始填入的格子，将其置为true,当n&gt;days后flag置为false,表明当月输入完毕。<br>效果如图：<br><img src="/img/calendar1.jpg" alt="image1"></p>
 <p>扩展：如果tbody部分非固定，html结构如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">		body,html&#123;padding: 0;margin: 0;font-size: 14px;color:#000;&#125;</div><div class="line">		table &#123;border-collapse: collapse;width: 100%;table-layout: fixed;&#125;</div><div class="line">		td,th &#123;border: 1px solid #e1e1e1;padding: 0;height: 20px;line-height: 20px;text-align: center;&#125;</div><div class="line">		.current&#123;color:red;&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;table&gt;</div><div class="line">    &lt;thead&gt;</div><div class="line">        &lt;tr&gt;&lt;th&gt;一&lt;/th&gt;&lt;th&gt;二&lt;/th&gt;&lt;th&gt;三&lt;/th&gt;&lt;th&gt;四&lt;/th&gt;&lt;th&gt;五&lt;/th&gt;&lt;th&gt;六&lt;/th&gt;&lt;th&gt;日&lt;/th&gt;&lt;/tr&gt;</div><div class="line">    &lt;/thead&gt;</div><div class="line">    &lt;tbody&gt;</div><div class="line">    &lt;/tbody&gt;</div><div class="line">&lt;/table&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
 <p>则可以通过循环写入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">function calender(year,month)&#123;</div><div class="line">	var date=new Date(year,month-1,1);</div><div class="line">	var date2 = new Date(year,month,1);</div><div class="line">	var first = date.getDay();</div><div class="line">	var days = (date2-date)/(1000*60*60*24);</div><div class="line">	var rows = Math.ceil((days+first-1)/7);  //输出日历时需要的行数</div><div class="line">	var today = new Date();</div><div class="line">	var todayInMonth = today.getFullYear()===year&amp;&amp;today.getMonth()+1 === month;</div><div class="line">	var theDay = today.getDate();</div><div class="line">	var n=1;</div><div class="line">	var flag=false;</div><div class="line">	var content_str=&quot;&quot;;</div><div class="line">	for(var i=1;i&lt;=rows;i++)&#123;</div><div class="line">		content_str+=&quot;&lt;tr&gt;&quot;</div><div class="line">		for(var j=0;j&lt;7;j++)&#123;</div><div class="line">			if(i==1&amp;&amp;(j==first-1))&#123;</div><div class="line">				flag=true;</div><div class="line">			&#125;</div><div class="line">			if(flag)&#123;</div><div class="line">				if(todayInMonth&amp;&amp;theDay===n)&#123;</div><div class="line">					content_str+=&quot;&lt;td class=&apos;current&apos;&gt;&quot;+n+&quot;&lt;/td&gt;&quot;;  //今日添加current样式</div><div class="line">				&#125;else&#123;</div><div class="line">					content_str+=&quot;&lt;td&gt;&quot;+n+&quot;&lt;/td&gt;&quot;;</div><div class="line">				&#125;</div><div class="line">				n++;</div><div class="line">			&#125;else&#123;</div><div class="line">				content_str+=&quot;&lt;td&gt;&lt;/td&gt;&quot;;</div><div class="line">			&#125;</div><div class="line">			if(n&gt;days)&#123;</div><div class="line">				flag=false;</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		content_str+=&quot;&lt;/tr&gt;&quot;</div><div class="line">	&#125;</div><div class="line">	var tbody=document.getElementsByTagName(&quot;tbody&quot;)[0];</div><div class="line">	tbody.innerHTML=content_str;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>关键在于通过一个月的天数days和第一天是星期几first确定外层循环的行数，其余部分则是在循环中对tbody的内容字符串就行拼接。</p>
+<p><img src="/img/calendar2.jpg" alt="image2"><br>关键在于通过一个月的天数days和第一天是星期几first确定外层循环的行数，其余部分则是在循环中对tbody的内容字符串就行拼接。</p>
 <p>总结：这个题目考察的点比较综合，包括Date内置对象的操作，DOM操作，如何两层循环输出日历。</p>
 
       
@@ -390,14 +393,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
@@ -406,15 +401,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工作流</a>
+                <a href="javascript:void(0)" class="js-tag color3">布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -426,11 +417,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工作流</a>
               </li>
             
             <div class="clearfix"></div>
